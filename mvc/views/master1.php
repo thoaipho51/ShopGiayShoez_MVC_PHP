@@ -40,10 +40,14 @@ if (isset($data['products'])) {
   <link rel="stylesheet" href="/shoez/public/plugins/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="/shoez/public/plugins/animate/animate.min.css">
   <link rel="stylesheet" href="/shoez/public/plugins/fontawesome/all.css">
+  
   <link rel="stylesheet" href="/shoez/public/plugins/webfonts/font.css">
   <link rel="stylesheet" href="/shoez/public/css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="/shoez/public/css/owl.theme.default.min.css" type="text/css">
+  
+  <!-- CSS Rating -->
   <link rel="stylesheet" type="text/css" href="/shoez/public/css/style.css">
+  <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
 
   <!-- UIkit CSS -->
   <link rel="stylesheet" href="/shoez/public/plugins/uikit/uikit.min.css" />

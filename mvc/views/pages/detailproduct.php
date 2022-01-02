@@ -61,6 +61,14 @@
                     </a>
                   </div>
 
+                  <div class="product-gallery__thumb  active" id="imgg2">
+                    <a class="product-gallery__thumb-placeholder" href="javascript:void(0);"
+                      data-image="/shoez/public/images/detailproduct/1.jpg" data-zoom-image="/shoez/public/images/detailproduct/1.jpg">
+                      <img src="/shoez/public/images/giay/anh2/<?=$ProductDetail['image']?>" data-image="/shoez/public/images/detailproduct/1.jpg"
+                        alt="Nike Air Max 90 Essential" grape="">
+                    </a>
+                  </div>
+
                   <!-- <div class="product-gallery__thumb " id="imgg2">
                     <a class="product-gallery__thumb-placeholder" href="javascript:void(0);"
                       data-image="/shoez/public/images/detailproduct/5.jpg" data-zoom-image="/shoez/public/images/detailproduct/5.jpg">
@@ -127,14 +135,14 @@
                   <li class="product-gallery-item gallery-item
                     current " id="imgg1a">
                     <img class="product-image-feature " src="/shoez/public/images/giay/anh1/<?=$ProductDetail['image']?>"
-                      alt="Nike Air Max 90 Essential" grape="">
+                      alt="<?=$ProductDetail['ten']?>" grape="">
                   </li>
 
-                  <!-- <li class="product-gallery-item gallery-item " id="imgg2a">
-                    <img class="product-image-feature" src="/shoez/public/images/detailproduct/5.jpg"
-                      alt="Nike Air Max 90 Essential" grape="">
+                  <li class="product-gallery-item gallery-item " id="imgg2a">
+                    <img class="product-image-feature" src="/shoez/public/images/giay/anh2/<?=$ProductDetail['image']?>"
+                      alt="<?=$ProductDetail['ten']?>" grape="">
                   </li>
-
+                  <!--
                   <li class="product-gallery-item gallery-item " id="imgg3a">
                     <img class="product-image-feature" src="/shoez/public/images/detailproduct/2.jpg"
                       alt="Nike Air Max 90 Essential" grape="">
@@ -194,18 +202,17 @@
               </div>
             </div>
             <div class="product-gallery-slide">
-              <div class="owl-carousel owl-theme owl-product-gallery-slide"">
-                <div class=" item">
-                <div class="product-gallery__thumb  >
-                  <a class=" product-gallery__thumb-placeholder" href="javascript:void(0);"
-                  data-image="/shoez/public/images/detailproduct/1.jpg" data-zoom-image="/shoez/public/images/detailproduct/1.jpg">
-                  <img src="/shoez/public/images/detailproduct/1.jpg" data-image="/shoez/public/images/detailproduct/1.jpg"
-                    alt="Nike Air Max 90 Essential" grape="">
-                  </a>
+              <div class="owl-carousel owl-theme owl-product-gallery-slide">
+                <div class="item">
+                  <div class="product-gallery__thumb">
+                    <a class=" product-gallery__thumb-placeholder" href="javascript:void(0);" data-image="/shoez/public/images/detailproduct/1.jpg" data-zoom-image="/shoez/public/images/detailproduct/1.jpg">
+                    <img src="/shoez/public/images/detailproduct/1.jpg" data-image="/shoez/public/images/detailproduct/1.jpg"
+                      alt="Nike Air Max 90 Essential" grape="">
+                    </a>
+                  </div>
                 </div>
-              </div>
               <div class="item">
-                <div class="product-gallery__thumb  >
+                <div class="product-gallery__thumb">
                   <a class=" product-gallery__thumb-placeholder" href="javascript:void(0);"
                   data-image="/shoez/public/images/detailproduct/2.jpg" data-zoom-image="/shoez/public/images/detailproduct/2.jpg">
                   <img src="/shoez/public/images/detailproduct/2.jpg" data-image="/shoez/public/images/detailproduct/2.jpg"
@@ -214,7 +221,7 @@
                 </div>
               </div>
               <div class="item">
-                <div class="product-gallery__thumb  >
+                <div class="product-gallery__thumb">
                   <a class=" product-gallery__thumb-placeholder" href="javascript:void(0);"
                   data-image="/shoez/public/images/detailproduct/3.jpg" data-zoom-image="/shoez/public/images/detailproduct/3.jpg">
                   <img src="/shoez/public/images/detailproduct/3.jpg" data-image="/shoez/public/images/detailproduct/3.jpg"
@@ -223,7 +230,7 @@
                 </div>
               </div>
               <div class="item">
-                <div class="product-gallery__thumb  >
+                <div class="product-gallery__thumb">
                   <a class=" product-gallery__thumb-placeholder" href="javascript:void(0);"
                   data-image="/shoez/public/images/detailproduct/4.jpg" data-zoom-image="/shoez/public/images/detailproduct/4.jpg">
                   <img src="/shoez/public/images/detailproduct/4.jpg" data-image="/shoez/public/images/detailproduct/4.jpg"
@@ -232,7 +239,7 @@
                 </div>
               </div>
               <div class="item">
-                <div class="product-gallery__thumb  >
+                <div class="product-gallery__thumb">
                   <a class=" product-gallery__thumb-placeholder" href="javascript:void(0);"
                   data-image="/shoez/public/images/detailproduct/5.jpg" data-zoom-image="/shoez/public/images/detailproduct/5.jpg">
                   <img src="/shoez/public/images/detailproduct/5.jpg" data-image="/shoez/public/images/detailproduct/5.jpg"
@@ -302,12 +309,12 @@
 
         
 
-        <div class="col-md-5 col-sm-12 col-xs-12
-            product-content-desc" id="detail-product">
+        <div class="col-md-5 col-sm-12 col-xs-12 product-content-desc" id="detail-product">
           <div class="product-content-desc-1">
             <div class="product-title">
               <h1><?=$ProductDetail['ten']?></h1>
-              <span id="pro_sku">SKU: <?=$ProductDetail['id_product']?></span>
+              <i class="far fa-star"></i>
+              <span id="pro_sku">Mã Giày: <?=$ProductDetail['id_product']?></span>
             </div>
             <div class="product-price" id="price-preview"><span class="pro-price"><?=number_format($ProductDetail['gia'],0)?></span> VNĐ</div>
             <form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
@@ -439,14 +446,14 @@
 
                 </div>
               </div>
-              <!--<div class="product-action-bottom visible-xs">
+              <!-- <div class="product-action-bottom visible-xs">
                   <div class="input-bottom">
                     <input id="quan-input" type="number" value="1" min="1">
                   </div>
                   <button type="button" id="add-to-cartbottom"
                     class="add-to-cartProduct add-cart-bottom button addtocart-modal" name="add">Thêm vào
                     giỏ</button>
-                </div>-->
+                </div> -->
             </form>
             <div class="product-description">
               <div class="title-bl">
@@ -461,8 +468,37 @@
           </div>
         </div>
       </div>
-          <!-- $ProductRelated -->
-
+      <!-- Rating -->
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row product-detail-main pr_style_01">
+          <div class="col-md-7 col-sm-12 col-xs-12">
+            
+            <h2>Đánh Giá Sản Phẩm</h2>
+            
+            <div class="stars">
+              <form action="">
+                <input class="star star-5" id="star-5" type="radio" name="star"/>
+                <label class="star star-5" for="star-5"></label>
+                <input class="star star-4" id="star-4" type="radio" name="star"/>
+                <label class="star star-4" for="star-4"></label>
+                <input class="star star-3" id="star-3" type="radio" name="star"/>
+                <label class="star star-3" for="star-3"></label>
+                <input class="star star-2" id="star-2" type="radio" name="star"/>
+                <label class="star star-2" for="star-2"></label>
+                <input class="star star-1" id="star-1" type="radio" name="star"/>
+                <label class="star star-1" for="star-1"></label>
+              </form>
+            </div>
+          </div>
+          
+          <div class="col-md-5 col-sm-12 col-xs-12 product-content-desc" id="detail-product">
+            <h2>Bình Luận</h2>
+          </div>
+       </div>
+      
+      
+      
+      <!-- $ProductRelated -->
       <div class="list-productRelated clearfix">
         <div class="heading-title text-center">
           <h2>Sản phẩm liên quan</h2>
@@ -507,7 +543,6 @@
             }
               
             ?>
-            
           </div>
         </div>
       </div>
