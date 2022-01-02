@@ -14,9 +14,12 @@
         {   
 
 
-            $sql ="SELECT * FROM product WHERE id_product = '$id'"; 
-            $result = $this->ProductModel->ExecuteSigleQR($sql);
-
+            // $sql ="SELECT * FROM product WHERE id_product = '$id'"; 
+            // $result = $this->ProductModel->ExecuteSigleQR($sql);
+            
+            $result = $this->ProductModel->getProductSigle($id);
+            $SanPhamLienQuan = $this->ProductModel->SanPhamLienQuan($result['id_brand']);
+            
             $usr = $this->UserModel->ValidateToken();
             if ($usr != null) {
                 if ($result != false) {
@@ -24,6 +27,7 @@
                         'Page'=>'detailproduct',
                         'user'=>$usr,
                         'ProductDetail'=>$result,
+                        'ProductRelated'=>$SanPhamLienQuan
                         // 'ProductOther'=> $resultOther
                     ]);
                 }else {
@@ -34,7 +38,7 @@
                     $this ->getView('master1', [
                         'Page'=>'detailproduct',
                         'ProductDetail'=>$result,
-                        // 'ProductOther'=> $resultOther
+                        'ProductRelated'=>$SanPhamLienQuan
                     ]);
                 }else {
                     

@@ -16,6 +16,7 @@
             //Data
             $Product_8 = $this->ProductModel->getRDProduct_8();
             $Product_10 = $this->ProductModel->getRDProduct_10();
+            $ProductHot = $this->ProductModel->getProductHot();
 
             $usr = $this->UserModel->ValidateToken();
             if ($usr != false) {
@@ -23,15 +24,15 @@
                     'Page'=>'homepage',
                     'user'=>$usr,
                     'Product_8'=>$Product_8,
-                    'Product_10'=>$Product_10
-                    
+                    'Product_10'=>$Product_10,
+                    'ProductHot'=>$ProductHot
                 ]);
             }else{
                 $this ->getView('master1', [
                     'Page'=>'homepage',
                     'Product_8'=>$Product_8,
-                    'Product_10'=>$Product_10
-                    
+                    'Product_10'=>$Product_10,
+                    'ProductHot'=>$ProductHot
                 ]);
             }
             

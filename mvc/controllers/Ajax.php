@@ -13,5 +13,13 @@
             echo $this->UserModel->checkUserName($un);  
             // echo $un;
         }
+
+        public function Click()
+        {
+            $nclick = $_POST['nclick'];
+
+            echo $this->ProductModel->adClick($nclick);  
+            // echo $un;
+        }
     }
 ?>

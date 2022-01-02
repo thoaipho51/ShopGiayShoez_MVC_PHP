@@ -4,11 +4,14 @@
   <!-- Registratior -->
   <?php require_once "./mvc/views/blocks/registratior.php" ;
 
-    if ($data['Product_8']) {
+    if (isset($data['Product_8'])) {
       $SanPhamBanChay = $data['Product_8'];
     }
-    if ($data['Product_10']) {
+    if (isset($data['Product_10'])) {
       $SanPhamMoi = $data['Product_10'];
+    }
+    if (isset($data['ProductHot'])) {
+      $SanPhamHot = $data['ProductHot'];
     }
   ?>
 
@@ -125,6 +128,7 @@
         </div>
       </div>
     </section>
+    <!--Product NEW-->
     <section>
       <div class="content">
         <div class="container">
@@ -137,7 +141,6 @@
             </div>
           </div>
         </div>
-        <!--Product-->
       </div>
       <div class="container product" style="width: 100%;margin: auto;">
         <div class="owl-carousel owl-theme owl-product-setting">
@@ -176,14 +179,64 @@
             echo  $SPBC;
           }
         ?>
-          
-      </div>
-
-
-
-
       </div>
     </section>
+     <!-- Hot Product -->
+     <section>
+      <div class="content">
+        <div class="container">
+          <div class="hot_sp">
+            <h2 style="text-align:center;">
+              <a style="font-size: 28px;color: black;text-decoration: none" href="">Sản phẩm đang Hot</a>
+            </h2>
+            <div class="view-all" style="text-align:center;">
+              <a style="color: black;text-decoration: none" href="">Xem thêm</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container product" style="width: 100%;margin: auto;">
+        <div class="owl-carousel owl-theme owl-product-setting">
+        <?php
+          foreach ($SanPhamHot as $item) {
+            $maGiay = $item['id_product'];
+            $tenGiay = $item['ten'];
+            $giaBan = number_format($item['gia'],0);
+            $Img = $item['image'];
+            $maLoai = $item['id_brand'];
+            $SPBC = <<<EOD
+            <div class="item">
+              <div class="">
+                <div class="product-block">
+                  <div class="product-img fade-box">
+                    <a href="/shoez/detailproduct/show/$maGiay" title="$tenGiay" class="img-resize">
+                      <img src="/shoez/public/images/giay/anh1/$Img" alt="$tenGiay"
+                        class="lazyloaded">
+                      <img src="/shoez/public/images/giay/anh2/$Img" alt="$tenGiay" class="lazyloaded">
+                    </a>
+                  </div>
+                  <div class="product-detail clearfix">
+                    <div class="pro-text">
+                      <a style=" color: black;font-size: 14px;text-decoration: none;" href="/shoez/detailproduct/show/$maGiay" title="$tenGiay" inspiration pack>
+                      $tenGiay
+                      </a>
+                    </div>
+                    <div class="pro-price">
+                      <p class="">$giaBan Vnđ</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            EOD;
+            echo  $SPBC;
+          }
+        ?>
+      </div>
+    </section>
+     <!-- END: Hot Product -->
+
+    <!--New-->
     <section class="">
       <div class="content">
         <div class="container">
@@ -195,9 +248,7 @@
           </div>
         </div>
       </div>
-      <!--New-->
       <div>
-
         <div class="container">
 
           <div class="row">

@@ -2,6 +2,11 @@
   if (isset($data['ProductDetail'])) {
     $ProductDetail = $data['ProductDetail'];
   }
+  // ProductRelated
+  if (isset($data['ProductRelated'])) {
+    $ProductRelated = $data['ProductRelated'];
+  }
+
 ?>
 
 <!--  detail product -->
@@ -27,7 +32,7 @@
             </li>
             <li class="active">
               <span>
-                <span itemprop="name">Nike Air Max 90</span>
+                <span itemprop="name"><?=$ProductDetail['ten']?></span>
               </span>
               <meta itemprop="position" content="3">
             </li>
@@ -456,109 +461,53 @@
           </div>
         </div>
       </div>
+          <!-- $ProductRelated -->
+
       <div class="list-productRelated clearfix">
         <div class="heading-title text-center">
           <h2>Sản phẩm liên quan</h2>
         </div>
         <div class="container">
-          
           <div class="row">
+            <?php
+            foreach ($ProductRelated as $item) {
+              $id_product = $item['id_product'];
+              $name = $item['ten'];
+              $price = $item['gia'];
+              $format = number_format($item['gia'],0);
+              $desc = $item['description'];
+              $img = $item['image'];
+              $RelatedPR = <<<EOD
+              <div class="col-md-3 col-sm-6 col-xs-6 col-6">
+                <div class="product-block">
+                  <div class="product-img fade-box">
+                    <a href="/shoez/detailproduct/show/$id_product" title="$name" class="img-resize">
+                      <img src="/shoez/public/images/giay/anh1/$img"
+                        alt="$name" class="lazyloaded">
+                      <img src="/shoez/public/images/giay/anh2/$img" alt="$name" class="lazyloaded">
+                    </a>
+
+                  </div>
+                  <div class="product-detail clearfix">
+                    <div class="pro-text">
+                      <a style="color: black;
+                          font-size: 14px;text-decoration: none;" href="/shoez/detailproduct/show/$id_product" title="Adidas EQT Cushion ADV" inspiration
+                        pack>
+                       $name
+                      </a>
+                    </div>
+                    <div class="pro-price">
+                      <p class="">$format</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              EOD;
+              echo $RelatedPR;
+            }
+              
+            ?>
             
-            <div class="col-md-3 col-sm-6 col-xs-6 col-6">
-              <div class="product-block">
-                <div class="product-img fade-box">
-                  <a href="#" title="Adidas EQT Cushion ADV" class="img-resize">
-                    <img src="/shoez/public/images/shoes/800502_01_e92c3b2bb8764b52a791846d84a3a360_grande.jpg"
-                      alt="Adidas EQT Cushion ADV" class="lazyloaded">
-                    <img src="/shoez/public/images/shoes/shoes fade 1.jpg" alt="Adidas EQT Cushion ADV" class="lazyloaded">
-                  </a>
-
-                </div>
-                <div class="product-detail clearfix">
-                  <div class="pro-text">
-                    <a style="color: black;
-                        font-size: 14px;text-decoration: none;" href="#" title="Adidas EQT Cushion ADV" inspiration
-                      pack>
-                      Adidas EQT Cushion ADV "North America"
-                    </a>
-                  </div>
-                  <div class="pro-price">
-                    <p class="">7,000,000₫</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 col-6">
-              <div class="product-block">
-                <div class="product-img fade-box">
-                  <a href="#" title="Adidas Nmd R1" class="img-resize">
-                    <img src="/shoez/public/images/shoes/201493_1_017364c87c3e4802a8cda5259e3d5a95_grande.jpg" alt="Adidas Nmd R1"
-                      class="lazyloaded">
-                    <img src="/shoez/public/images/shoes/shoes fade 2.jpg" alt="Adidas Nmd R1" class="lazyloaded">
-                  </a>
-
-                </div>
-                <div class="product-detail clearfix">
-                  <div class="pro-text">
-                    <a style="color: black;
-                        font-size: 14px;text-decoration: none;" title="Adidas Nmd R1" href="">
-                      Adidas Nmd R1 "Villa Exclusive"
-                    </a>
-                  </div>
-                  <div class="pro-price">
-                    <p class="">7,000,000₫</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 col-6">
-              <div class="product-block">
-                <div class="product-img fade-box">
-                  <a href="#" title="Adidas PW Solar HU NMD" class="img-resize">
-                    <img src="/shoez/public/images/shoes/805266_02_b8b2cdd1782246febf8879a44a7e5021_grande.jpg"
-                      alt="Adidas PW Solar HU NMD" class="lazyloaded">
-                    <img src="/shoez/public/images/shoes/shoes fade 3.jpg" alt="Adidas PW Solar HU NMD" class="lazyloaded">
-                  </a>
-
-                </div>
-                <div class="product-detail clearfix">
-                  <div class="pro-text">
-                    <a style="color: black;
-                        font-size: 14px;text-decoration: none;" href="#" title="Adidas PW Solar HU NMD" inspiration
-                      pack>
-                      Adidas PW Solar HU NMD "Inspiration Pack"
-                    </a>
-                  </div>
-                  <div class="pro-price">
-                    <p class="">5,000,000₫</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 col-6">
-              <div class="product-block">
-                <div class="product-img fade-box">
-                  <a href="#" title="Adidas Ultraboost W" class="img-resize">
-                    <img src="/shoez/public/images/shoes/801432_01_b16d089f8bda434bacfe4620e8480be1_grande.jpg"
-                      alt="Adidas Ultraboost W" class="lazyloaded">
-                    <img src="/shoez/public/images/shoes/shoes fade 4.jpg" alt="Adidas Ultraboost W" class="lazyloaded">
-                  </a>
-
-                </div>
-                <div class="product-detail clearfix">
-                  <div class="pro-text">
-                    <a style="color: black;
-                        font-size: 14px;text-decoration: none;" href="#" title="Adidas Ultraboost W" inspiration
-                      pack>
-                      Adidas Ultraboost W
-                    </a>
-                  </div>
-                  <div class="pro-price">
-                    <p class="">5,300,000₫</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
