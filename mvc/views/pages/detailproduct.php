@@ -313,8 +313,7 @@
           <div class="product-content-desc-1">
             <div class="product-title">
               <h1><?=$ProductDetail['ten']?></h1>
-              <i class="far fa-star"></i>
-              <span id="pro_sku">Mã Giày: <?=$ProductDetail['id_product']?></span>
+              <span >Mã Giày: <?=$ProductDetail['id_product']?></span>
             </div>
             <div class="product-price" id="price-preview"><span class="pro-price"><?=number_format($ProductDetail['gia'],0)?></span> VNĐ</div>
             <form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
@@ -469,34 +468,9 @@
         </div>
       </div>
       <!-- Rating -->
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="row product-detail-main pr_style_01">
-          <div class="col-md-7 col-sm-12 col-xs-12">
-            
-            <h2>Đánh Giá Sản Phẩm</h2>
-            
-            <div class="stars">
-              <form action="">
-                <input class="star star-5" id="star-5" type="radio" name="star"/>
-                <label class="star star-5" for="star-5"></label>
-                <input class="star star-4" id="star-4" type="radio" name="star"/>
-                <label class="star star-4" for="star-4"></label>
-                <input class="star star-3" id="star-3" type="radio" name="star"/>
-                <label class="star star-3" for="star-3"></label>
-                <input class="star star-2" id="star-2" type="radio" name="star"/>
-                <label class="star star-2" for="star-2"></label>
-                <input class="star star-1" id="star-1" type="radio" name="star"/>
-                <label class="star star-1" for="star-1"></label>
-              </form>
-            </div>
-          </div>
-          
-          <div class="col-md-5 col-sm-12 col-xs-12 product-content-desc" id="detail-product">
-            <h2>Bình Luận</h2>
-          </div>
-       </div>
-      
-      
+      <?php
+         require_once "./mvc/views/blocks/review.php"
+      ?>
       
       <!-- $ProductRelated -->
       <div class="list-productRelated clearfix">
