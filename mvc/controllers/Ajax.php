@@ -119,7 +119,12 @@
     
                 }
             }else{
+                if(isset($_POST["rating_data"]))
+                {
+                    echo "Vui lòng đăng nhập để đánh giá sản phẩm !!!";
+                }
     
+
                 if(isset($_POST["action"]))
                 {
                     $id_product = $_POST["id_product"];
@@ -200,6 +205,7 @@
                     );
     
                     echo json_encode($output);
+                    
     
                 }
                 
